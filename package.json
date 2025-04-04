@@ -1,0 +1,43 @@
+{
+  "name": "react-vite-firestore",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "build:stage": "rm -rf dist && NODE_ENV=development REACT_APP_STAGE=stage tsc -b && vite build --mode development",
+    "build:prod": "rm -rf dist && NODE_ENV=production REACT_APP_STAGE=production tsc -b && vite build --mode production",
+    "deploy:stage": "firebase deploy --only hosting -P staging",
+    "publish:stage": "yarn build:stage && yarn deploy:stage",
+    "deploy:prod2-old": "firebase deploy --only hosting -P default",
+    "deploy:prod": "CLOUDFLARE_ACCOUNT_ID=<YOUR ACCOUNT ID> npx wrangler pages deploy ./dist --project-name your-project-name",
+    "publish:prod": "yarn build:prod && yarn deploy:prod",
+    "publish:all": "yarn publish:stage && yarn publish:prod"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.2.5",
+    "@mui/icons-material": "^7.0.1",
+    "@mui/material": "^7.0.1",
+    "firebase": "^11.6.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
+  }
+}
