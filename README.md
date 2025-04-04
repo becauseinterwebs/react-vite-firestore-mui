@@ -3,7 +3,7 @@
 By [Because...Interwebs!](https://becauseinterwebs.com)
 
 This scaffolding template is designed to get a project using Vite, React, Firestore and Material UI up and running quickly. 
-It is a template I built as I found myself replicating this setup each time I started a new project with these requirements. It is built from my base (React + Vite + Firestore)[https://github.com/becauseinterwebs/react-vite-firestore] template.
+It is a template I built as I found myself replicating this setup each time I started a new project with these requirements. It is built from my base [React + Vite + Firestore](https://github.com/becauseinterwebs/react-vite-firestore) template.
 
 It does not include any CSS systems or frameworks such as Tailwind or Material UI.
 
